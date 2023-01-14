@@ -1,0 +1,8 @@
+@import "/src/styles/vars";
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-m);
+}

@@ -1,2 +1,9 @@
-$c-white: #fff;
-$accent: var(--teal12);
+$c-text: var(--cyan12);
+$c-text-light: var(--slate11);
+$c-border: var(--slate6);
+
+$fz-regular: var(--step--1);
+$fz-title: var(--step-1);
+
+$shadow-card-hover: 0 0 10px 0 var(--cyan4);
+$gradient-card: linear-gradient(180deg, var(--slate3) 0%, var(--cyan3) 100%);

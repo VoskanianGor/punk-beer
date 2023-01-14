@@ -1,12 +1,14 @@
 @import '@radix-ui/colors/gray.css';
+@import '@radix-ui/colors/slate.css';
 @import '@radix-ui/colors/purple.css';
-@import '@radix-ui/colors/teal.css';
+@import '@radix-ui/colors/cyan.css';
 @import '@radix-ui/colors/amber.css';
 @import '@radix-ui/colors/blue.css';
 
 /* Dark mode */
 @import '@radix-ui/colors/grayDark.css';
+@import '@radix-ui/colors/slateDark.css';
 @import '@radix-ui/colors/purpleDark.css';
-@import '@radix-ui/colors/tealDark.css';
+@import '@radix-ui/colors/cyanDark.css';
 @import '@radix-ui/colors/amberDark.css';
 @import '@radix-ui/colors/blueDark.css';

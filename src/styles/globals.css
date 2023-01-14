@@ -1,26 +1,56 @@
 :root {
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+	--font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+		'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+		'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+	/* Typography */
+	/* @link https://utopia.fyi/type/calculator?c=320,14,1.2,1920,24,1.25,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+	--step--3: clamp(0.51rem, calc(0.45rem + 0.26vw), 0.77rem);
+	--step--2: clamp(0.61rem, calc(0.54rem + 0.35vw), 0.96rem);
+	--step--1: clamp(0.73rem, calc(0.64rem + 0.47vw), 1.2rem);
+	--step-0: clamp(0.88rem, calc(0.75rem + 0.63vw), 1.5rem);
+	--step-1: clamp(1.05rem, calc(0.89rem + 0.83vw), 1.88rem);
+	--step-2: clamp(1.26rem, calc(1.04rem + 1.08vw), 2.34rem);
+	--step-3: clamp(1.51rem, calc(1.23rem + 1.42vw), 2.93rem);
+	--step-4: clamp(1.81rem, calc(1.44rem + 1.85vw), 3.66rem);
+	--step-5: clamp(2.18rem, calc(1.7rem + 2.4vw), 4.58rem);
+
+	/* Spaces */
+	/* @link https://utopia.fyi/space/calculator?c=320,14,1.2,1920,24,1.25,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+	--space-3xs: clamp(0.25rem, calc(0.23rem + 0.13vw), 0.38rem);
+	--space-2xs: clamp(0.44rem, calc(0.38rem + 0.31vw), 0.75rem);
+	--space-xs: clamp(0.69rem, calc(0.6rem + 0.44vw), 1.13rem);
+	--space-s: clamp(0.88rem, calc(0.75rem + 0.63vw), 1.5rem);
+	--space-m: clamp(1.31rem, calc(1.13rem + 0.94vw), 2.25rem);
+	--space-l: clamp(1.75rem, calc(1.5rem + 1.25vw), 3rem);
+	--space-xl: clamp(2.63rem, calc(2.25rem + 1.88vw), 4.5rem);
+	--space-2xl: clamp(3.5rem, calc(3rem + 2.5vw), 6rem);
+	--space-3xl: clamp(5.25rem, calc(4.5rem + 3.75vw), 9rem);
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+	max-width: 100vw;
+	overflow-x: hidden;
 }
 
 body {
-  background-color: var(--gray9);
+	background-color: var(--slate1);
+	color: var(--cyan12);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
+}
+
+.container {
+	margin-inline: auto;
+	width: min(100% - 30px, clamp(320px, 88.2vw, 1440px));
 }

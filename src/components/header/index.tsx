@@ -2,7 +2,9 @@
 
 import { SunIcon } from '@radix-ui/react-icons'
 import clsx from 'clsx'
+import { cookies } from 'next/headers'
 import Link from 'next/link'
+import ThemeToggler from '~components/theme-toggler'
 import useScroll from '~hooks/use-scroll'
 import s from './index.module.scss'
 
@@ -15,16 +17,11 @@ const Header = () => {
 				className={clsx(s.header, 'container', {
 					[s.scrolled]: isScrolled,
 				})}
-				onScroll={() => {
-					console.log('scroll')
-				}}
 			>
 				<Link className={s.logo} href="/">
 					🍻 Punk Beer
 				</Link>
-				<button>
-					<SunIcon />
-				</button>
+				<ThemeToggler />
 			</header>
 			<div className={s.ghost} />
 		</>

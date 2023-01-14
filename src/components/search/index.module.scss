@@ -1,0 +1,86 @@
+@import "/src/styles/vars";
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid $c-border;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+
+  &:has(:focus-within) {
+    box-shadow: $focus-outline;
+  }
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding-left: 30px;
+  background-color: transparent;
+  font-size: $fz-regular;
+  color: $c-text;
+  font-weight: 500;
+  line-height: 100%;
+  outline: none;
+}
+
+.clearButton {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+  width: 30px;
+  height: 30px;
+
+  .icon {
+    animation: slideOut 0.2s ease-in-out forwards;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &:focus {
+    box-shadow: $focus-outline;
+  }
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  animation: slideIn 0.2s ease-in-out forwards;
+
+  path {
+    fill: currentColor;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

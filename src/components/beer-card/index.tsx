@@ -1,5 +1,4 @@
 import type { FC } from 'react'
-import Balancer from 'react-wrap-balancer'
 import Image from 'next/image'
 import Link from 'next/link'
 import type IBeer from '~interfaces/i-beer'

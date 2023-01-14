@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Input from '~components/search/input'
+import Input from '~components/search'
 import IBeer from '~interfaces/i-beer'
 import useSWR from 'swr'
 import BeerCard from '~components/beer-card'
@@ -11,9 +11,10 @@ export default async function Home() {
 
 	return (
 		<main>
+			<Input />
 			<div className={s.cards}>
 				{beers.map(beer => (
-					<BeerCard beer={beer} />
+					<BeerCard key={beer.id} beer={beer} />
 				))}
 			</div>
 		</main>

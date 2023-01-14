@@ -1,4 +1,5 @@
 import { Inter } from '@next/font/google'
+import Header from '~components/header'
 import '~styles/colors.css'
 import '~styles/globals.css'
 
@@ -16,9 +17,11 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
 			<head />
-			{/* <Provider> */}
-			<body className="container">{children}</body>
-			{/* </Provider> */}
+
+			<body className="container">
+				<Header />
+				{children}
+			</body>
 		</html>
 	)
 }

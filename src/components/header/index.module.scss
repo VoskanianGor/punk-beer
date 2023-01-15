@@ -1,0 +1,33 @@
+@import "/src/styles/vars";
+
+%header-size {
+  padding-block: var(--space-m);
+  height: 100px;
+}
+
+.ghost {
+  @extend %header-size;
+}
+
+.header {
+  @extend %header-size;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: $z-index-header;
+
+  .logo {
+    font-size: var(--step-2);
+    font-weight: 700;
+  }
+
+  &.scrolled {
+    background: linear-gradient(180deg, #{$c-bg} 30%, transparent 100%);
+    transform: translateY(-15%);
+  }
+}

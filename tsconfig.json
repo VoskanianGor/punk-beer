@@ -25,6 +25,9 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "~api/*": [
+        "./src/api/*"
+      ],
       "~assets/*": [
         "./public/assets/*"
       ],

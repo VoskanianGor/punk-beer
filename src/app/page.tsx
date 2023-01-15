@@ -1,12 +1,21 @@
-import { Inter } from '@next/font/google'
-import styles from './styles.module.scss'
+import Image from 'next/image'
+import Input from '~components/search'
+import getBeers from '~api/get-beers'
+import s from './index.module.scss'
+import BeerList from '~components/beer-list'
+import { IPage } from '~interfaces/i-page'
 
-const inter = Inter({ subsets: ['latin'] })
+const Home: IPage = async ({ searchParams }) => {
+	const beers = await getBeers()
 
-export default function Home() {
+	console.log(searchParams)
+
 	return (
-		<main className={inter.className}>
-			<h1 className={styles.test}>TEST</h1>
+		<main>
+			<Input />
+			<BeerList beers={beers} /* searchParams={searchParams} */ />
 		</main>
 	)
 }
+
+export default Home

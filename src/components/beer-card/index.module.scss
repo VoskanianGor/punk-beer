@@ -1,0 +1,37 @@
+@import '/src/styles/vars';
+
+.card {
+  padding: var(--space-s);
+  border: 1px solid $c-border;
+  border-radius: 5px;
+  max-width: 360px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  justify-content: center;
+  background: $gradient-card;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: $shadow-card-hover;
+  }
+}
+
+.image {
+  object-fit: contain;
+  align-self: center;
+  margin-bottom: var(--space-m);
+}
+
+.name {
+  font-size: $fz-title;
+  font-weight: bold;
+}
+
+.description {
+  color: $c-text-light;
+  font-size: $fz-regular;
+  font-style: italic;
+}

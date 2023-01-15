@@ -21,11 +21,10 @@ const BeerCard: FC<IBeerCard> = ({ beer, descriptionLimit = 140 }) => {
 			<div className={s.card}>
 				<Image
 					className={s.image}
-					src={image_url}
+					src={image_url ?? '/assets/images/beer-placeholder.png'}
 					alt={name}
 					width={80}
 					height={180}
-					style={{ objectFit: 'contain' }}
 				/>
 				<h2 className={s.name}>{name}</h2>
 				<p className={s.description}>{descriptionText}</p>

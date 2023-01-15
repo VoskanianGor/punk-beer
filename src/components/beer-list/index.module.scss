@@ -1,11 +1,21 @@
 @import "/src/styles/vars";
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  --card-width: 332px;
+  animation: onMount 0.3s ease-in-out;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
   gap: var(--space-m);
-  margin-top: 40px;
+  margin-block: 40px;
+  transition: all 0.3s ease-in-out;
+
+  @media (max-width: 728px) {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    width: min(100%, var(--card-width));
+  }
 }
 
 .loading {
@@ -30,5 +40,17 @@
 @keyframes spinner {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes onMount {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

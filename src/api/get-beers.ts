@@ -1,7 +1,11 @@
 import IBeer from "~interfaces/i-beer"
 
 const makeRequest = async <T>(url: string) => {
-  const response = await fetch(url)
+  const response = await fetch(url, {
+    cache: 'no-store', next: {
+      revalidate: 1,
+    }
+  })
 
   if (!response.ok) {
     throw new Error('Error fetching beers')
@@ -19,5 +23,5 @@ export const getBeers = async (query?: string) => {
 export const getBeerById = async (id: string) => {
   const url = `${process.env.API_URL}/beers/${id}`
 
-  return makeRequest<IBeer[]>(url)
+  return await makeRequest<IBeer[]>(url)
 }

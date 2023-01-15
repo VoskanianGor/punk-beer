@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Input from '~components/search'
 import { getBeers } from '~api/get-beers'
-import s from './index.module.scss'
 import BeerList from '~components/beer-list'
 import { IPage } from '~interfaces/i-page'
 import Pagination from '~components/pagination'
+import s from './index.module.scss'
 
 interface SearchParams {
 	beer_name?: string

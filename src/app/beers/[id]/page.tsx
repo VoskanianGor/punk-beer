@@ -1,9 +1,6 @@
 import { getBeerById } from '~api/get-beers'
 import { IPage } from '~interfaces/i-page'
 
-export const dynamic = 'force-dynamic'
-export const dynamicParams = true
-
 const BeerPage: IPage = async ({ params: { id } }) => {
 	const [beerData] = await getBeerById(id)
 

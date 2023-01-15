@@ -1,22 +1,21 @@
-import Image from 'next/image'
-import Input from '~components/search'
-import { getBeers } from '~api/get-beers'
-import s from './index.module.scss'
-import BeerList from '~components/beer-list'
 import { IPage } from '~interfaces/i-page'
-import PreLoad from './preload'
+import { redirect } from 'next/navigation'
 
-const Home: IPage = async ({ searchParams }) => {
-	const search = searchParams?.['beer_name'] ?? ''
-	console.log('🚀 ~ file: page.tsx:11 ~ constHome:IPage= ~ search', search)
-	const beers = await getBeers(search ? `beer_name=${search}` : '')
+interface SearchParams {
+	beer_name?: string
+	page?: string | number
+	per_page?: string | number
+}
 
-	return (
-		<main className={s.main}>
-			<Input />
-			<BeerList beers={beers} />
-		</main>
-	)
+const Home: IPage = async ({ searchParams: SSRSearchParams }) => {
+	const searchParams = new URLSearchParams(SSRSearchParams)
+	searchParams.set('per_page', '9')
+
+	if (!searchParams.has('page')) {
+		searchParams.append('page', '1')
+	}
+
+	redirect(`/beers/?${searchParams.toString()}`)
 }
 
 export default Home

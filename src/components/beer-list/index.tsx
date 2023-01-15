@@ -19,10 +19,13 @@ const fetcher = (url: string) =>
 
 const BeerList: FC<IBeerList> = ({ beers }) => {
 	const searchParams = useSearchParams()
-	const params = new URLSearchParams(searchParams)
-	const url = searchParams ? `/beers?${params.toString()}` : null
+	const url = searchParams ? `/beers?${searchParams.toString()}` : null
 
-	const { data: res, isLoading } = useSWR<IBeer[]>(url, fetcher, {
+	const {
+		data: res,
+		isLoading,
+		isValidating,
+	} = useSWR<IBeer[]>(url, fetcher, {
 		revalidateOnFocus: false,
 		revalidateOnMount: false,
 		keepPreviousData: true,
@@ -33,13 +36,13 @@ const BeerList: FC<IBeerList> = ({ beers }) => {
 	return (
 		<div
 			className={clsx(s.cards, {
-				[s.loading]: isLoading,
+				[s.loading]: isLoading || isValidating,
 			})}
 		>
 			{beersData.length > 0 ? (
 				beersData.map(beer => <BeerCard key={beer.id} beer={beer} />)
 			) : (
-				<h1>No beers found :c</h1>
+				<h1>No beers found 😔</h1>
 			)}
 		</div>
 	)

@@ -5,7 +5,7 @@ import { FC, ReactElement } from 'react'
 */
 export interface IPageProps {
   params: { [key: string]: string }
-  searchParams?: { [key: string]: string | string[] | undefined }
+  searchParams?: Record<string, string>
 }
 
 /** 

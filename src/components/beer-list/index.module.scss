@@ -7,7 +7,7 @@
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
   gap: var(--space-m);
-  margin-block: 40px;
+  margin-bottom: 40px;
   transition: all 0.3s ease-in-out;
 
   @media (max-width: 728px) {

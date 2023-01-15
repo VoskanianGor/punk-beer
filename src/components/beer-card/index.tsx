@@ -17,7 +17,7 @@ const BeerCard: FC<IBeerCard> = ({ beer, descriptionLimit = 140 }) => {
 			: description
 
 	return (
-		<Link href={`/${id}`}>
+		<Link href={`/beers/${id}`}>
 			<div className={s.card}>
 				<Image
 					className={s.image}

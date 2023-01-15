@@ -1,7 +1,7 @@
 @import "/src/styles/vars";
 
 .main {
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }

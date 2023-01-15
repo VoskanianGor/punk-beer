@@ -10,3 +10,12 @@ $shadow-card-hover: 0 0 15px 0 var(--cyan4);
 $gradient-card: linear-gradient(180deg, var(--slate3) 0%, var(--cyan3) 100%);
 
 $focus-outline: 0 0 0 0.2rem var(--cyan5);
+
+
+$z-index-10: 10;
+$z-index-20: 20;
+$z-index-30: 30;
+$z-index-40: 40;
+$z-index-max: 999;
+
+$z-index-header: $z-index-max;

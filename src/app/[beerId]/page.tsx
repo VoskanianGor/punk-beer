@@ -1,6 +1,9 @@
 import getBeers from '~api/get-beers'
 import { IPage } from '~interfaces/i-page'
 
+export const dynamic = 'auto'
+export const dynamicParams = true
+
 const BeerPage: IPage = async ({ params: { beerId } }) => {
 	const [beerData] = await getBeers(beerId)
 

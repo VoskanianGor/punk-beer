@@ -1,22 +1,21 @@
 import Image from 'next/image'
 import Input from '~components/search'
-import IBeer from '~interfaces/i-beer'
-import useSWR from 'swr'
-import BeerCard from '~components/beer-card'
 import getBeers from '~api/get-beers'
 import s from './index.module.scss'
+import BeerList from '~components/beer-list'
+import { IPage } from '~interfaces/i-page'
 
-export default async function Home() {
+const Home: IPage = async ({ searchParams }) => {
 	const beers = await getBeers()
+
+	console.log(searchParams)
 
 	return (
 		<main>
 			<Input />
-			<div className={s.cards}>
-				{beers.map(beer => (
-					<BeerCard key={beer.id} beer={beer} />
-				))}
-			</div>
+			<BeerList beers={beers} /* searchParams={searchParams} */ />
 		</main>
 	)
 }
+
+export default Home

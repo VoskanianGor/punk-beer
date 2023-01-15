@@ -1,7 +1,7 @@
 @import "/src/styles/vars";
 
 %header-size {
-  padding: var(--space-m);
+  padding-block: var(--space-m);
   height: 100px;
 }
 
@@ -18,18 +18,16 @@
   top: 0;
   left: 0;
   right: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: $z-index-header;
 
   .logo {
     font-size: var(--step-2);
     font-weight: 700;
-    transition: all 0.2s ease-in-out;
   }
 
   &.scrolled {
     background: linear-gradient(180deg, #{$c-bg} 30%, transparent 100%);
-
-    .logo {
-      transform: translateY(-30%);
-    }
+    transform: translateY(-15%);
   }
 }

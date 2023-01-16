@@ -8,7 +8,7 @@ const ButtonBack = () => {
 	const { back } = useRouter()
 
 	return (
-		<button className={s.back} onClick={back}>
+		<button className={s.back} onClick={back} title="back">
 			<ArrowLeftIcon className={s.icon} />
 			<h2>Back to beers</h2>
 		</button>

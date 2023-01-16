@@ -25,6 +25,7 @@ const Pagination: FC<IPagination> = ({ currentPage: initialCurrentPage }) => {
 				className={s.iconWrapper}
 				onClick={handlePrevPage}
 				disabled={currentPage === 1}
+				title="previous page"
 			>
 				<ChevronLeftIcon className={s.icon} />
 			</button>
@@ -34,6 +35,7 @@ const Pagination: FC<IPagination> = ({ currentPage: initialCurrentPage }) => {
 					className={s.pageNumber}
 					onClick={() => handlePageChange(pageNumber)}
 					disabled={+currentPage === pageNumber}
+					title={`go to page ${pageNumber}`}
 				>
 					{pageNumber}
 				</button>
@@ -42,6 +44,7 @@ const Pagination: FC<IPagination> = ({ currentPage: initialCurrentPage }) => {
 				className={s.iconWrapper}
 				onClick={handleNextPage}
 				disabled={currentPage === totalPages}
+				title="next page"
 			>
 				<ChevronRightIcon className={s.icon} />
 			</button>

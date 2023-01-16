@@ -17,7 +17,11 @@ const Search = () => {
 				placeholder="for example Alpha..."
 			/>
 			{search ? (
-				<button className={s.clearButton} onClick={handleClear}>
+				<button
+					className={s.clearButton}
+					onClick={handleClear}
+					title="clear search"
+				>
 					<Cross2Icon className={s.icon} />
 				</button>
 			) : (

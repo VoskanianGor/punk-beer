@@ -1,15 +1,15 @@
 import { getBeerById } from '~api/get-beers'
-import { IPage } from '~interfaces/i-page'
+import BeerView from '~components/beer-view/page'
+import { SSRPage } from '~interfaces/i-page'
+import s from './index.module.scss'
 
-const BeerPage: IPage = async ({ params: { id } }) => {
+const BeerPage: SSRPage = async ({ params: { id } }) => {
 	const [beerData] = await getBeerById(id)
 
 	return (
-		<>
-			<h1>Beer Page {id}</h1>
-			<p>{beerData?.name}</p>
-			<h2>{beerData?.description}</h2>
-		</>
+		<main>
+			<BeerView beer={beerData} />
+		</main>
 	)
 }
 

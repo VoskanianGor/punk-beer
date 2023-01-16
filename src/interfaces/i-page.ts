@@ -21,5 +21,5 @@ export interface AFC<P = {}> {
  * NextJs 13 Page Component.
  * it can be a Function Component or Async Function Component
  */
-export type IPage<TProps = {}> = FC<IPageProps & TProps> | AFC<IPageProps & TProps>
+export type SSRPage<TProps = {}> = FC<IPageProps & TProps> | AFC<IPageProps & TProps>
 

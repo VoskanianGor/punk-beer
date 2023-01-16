@@ -4,7 +4,7 @@ import { MagnifyingGlassIcon, Cross2Icon } from '@radix-ui/react-icons'
 import useSearchWithRoute from '~hooks/use-search-with-route'
 import s from './index.module.scss'
 
-const Input = () => {
+const Search = () => {
 	const { search, handleChange, handleClear } = useSearchWithRoute()
 
 	return (
@@ -27,4 +27,4 @@ const Input = () => {
 	)
 }
 
-export default Input
+export default Search

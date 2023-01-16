@@ -1,15 +1,9 @@
-import { IPage } from '~interfaces/i-page'
 import { redirect } from 'next/navigation'
+import type { SSRPage } from '~interfaces/i-page'
 
-interface SearchParams {
-	beer_name?: string
-	page?: string | number
-	per_page?: string | number
-}
-
-const Home: IPage = async ({ searchParams: SSRSearchParams }) => {
+const Home: SSRPage = async ({ searchParams: SSRSearchParams }) => {
 	const searchParams = new URLSearchParams(SSRSearchParams)
-	searchParams.set('per_page', '9')
+	searchParams.set('per_page', '8')
 
 	if (!searchParams.has('page')) {
 		searchParams.append('page', '1')

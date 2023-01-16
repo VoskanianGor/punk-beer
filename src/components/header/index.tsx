@@ -1,9 +1,7 @@
 'use client'
 
-import { SunIcon } from '@radix-ui/react-icons'
-import clsx from 'clsx'
-import { cookies } from 'next/headers'
 import Link from 'next/link'
+import clsx from 'clsx'
 import ThemeToggler from '~components/theme-toggler'
 import useScroll from '~hooks/use-scroll'
 import s from './index.module.scss'

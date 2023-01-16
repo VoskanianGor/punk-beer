@@ -5,7 +5,7 @@ import { FC, ReactElement } from 'react'
 */
 export interface IPageProps {
   params: { [key: string]: string }
-  searchParams?: { [key: string]: string | string[] | undefined }
+  searchParams?: Record<string, string>
 }
 
 /** 
@@ -18,8 +18,8 @@ export interface AFC<P = {}> {
 }
 
 /** 
- * NextJs 13 Page Component.
+ * NextJs 13 SSR Page.
  * it can be a Function Component or Async Function Component
  */
-export type IPage<TProps = {}> = FC<IPageProps & TProps> | AFC<IPageProps & TProps>
+export type SSRPage<TProps = {}> = FC<IPageProps & TProps> | AFC<IPageProps & TProps>
 

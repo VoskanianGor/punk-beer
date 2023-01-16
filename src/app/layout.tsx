@@ -1,6 +1,6 @@
+import { cookies } from 'next/headers'
 import { Inter } from '@next/font/google'
 import clsx from 'clsx'
-import { cookies } from 'next/headers'
 import Header from '~components/header'
 import '~styles/colors.css'
 import '~styles/globals.css'

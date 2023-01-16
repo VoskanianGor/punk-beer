@@ -7,7 +7,7 @@
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
   gap: var(--space-m);
-  margin-block: 40px;
+  margin-bottom: 40px;
   transition: all 0.3s ease-in-out;
 
   @media (max-width: 728px) {
@@ -20,6 +20,8 @@
 
 .loading {
   opacity: 0.4;
+  pointer-events: none;
+  margin-top: 8%;
 
   &:before {
     content: "";
@@ -40,17 +42,5 @@
 @keyframes spinner {
   to {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes onMount {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

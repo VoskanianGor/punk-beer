@@ -5,28 +5,26 @@ import useDebounce from "./use-debounce"
 
 
 const useSearchWithRoute = () => {
-  const beerName = useSearchParams().toString().split('=')[1]
-  const [search, setSearch] = useState(beerName || '')
-  const debouncedSearch = useDebounce(search, 600)
+  const searchParams = useSearchParams()
+  const params = new URLSearchParams(searchParams)
+  const initialSearch = searchParams.get('beer_name') || ''
+  const [search, setSearch] = useState(initialSearch)
+  const debouncedSearch = useDebounce(search, 500)
   const router = useRouter()
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value)
   }
 
-  const handleClear = () => {
-    setSearch('')
-    router.push('/')
-  }
+  const handleClear = () => setSearch('')
 
   useEffect(() => {
-    const params = new URLSearchParams()
-    params.set('beer_name', debouncedSearch)
-
     if (debouncedSearch) {
-      router.push(`/?${params.toString()}`)
+      params.set('beer_name', debouncedSearch)
+      router.push(`/beers/?${params.toString()}`)
     } else {
-      router.push('/')
+      params.delete('beer_name')
+      router.push(`/beers/?${params.toString()}`)
     }
   }, [debouncedSearch])
 

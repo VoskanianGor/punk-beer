@@ -1,13 +1,12 @@
 'use client'
 
-import { FC, use, useEffect, useState } from 'react'
-import useSWR from 'swr'
-import s from './index.module.scss'
-import BeerCard from '~components/beer-card'
+import type { FC } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { useAutoAnimate } from '@formkit/auto-animate/react'
-import IBeer from '~interfaces/i-beer'
+import useSWR from 'swr'
 import clsx from 'clsx'
+import type IBeer from '~interfaces/i-beer'
+import BeerCard from '~components/beer-card'
+import s from './index.module.scss'
 
 interface IBeerList {
 	beers: IBeer[]
@@ -19,10 +18,13 @@ const fetcher = (url: string) =>
 
 const BeerList: FC<IBeerList> = ({ beers }) => {
 	const searchParams = useSearchParams()
-	const params = new URLSearchParams(searchParams)
-	const url = searchParams ? `/beers?${params.toString()}` : null
+	const url = searchParams ? `/beers?${searchParams.toString()}` : null
 
-	const { data: res, isLoading } = useSWR<IBeer[]>(url, fetcher, {
+	const {
+		data: res,
+		isLoading,
+		isValidating,
+	} = useSWR<IBeer[]>(url, fetcher, {
 		revalidateOnFocus: false,
 		revalidateOnMount: false,
 		keepPreviousData: true,
@@ -33,13 +35,13 @@ const BeerList: FC<IBeerList> = ({ beers }) => {
 	return (
 		<div
 			className={clsx(s.cards, {
-				[s.loading]: isLoading,
+				[s.loading]: isLoading || isValidating,
 			})}
 		>
 			{beersData.length > 0 ? (
 				beersData.map(beer => <BeerCard key={beer.id} beer={beer} />)
 			) : (
-				<h1>No beers found :c</h1>
+				<h1>No beers found 😔</h1>
 			)}
 		</div>
 	)

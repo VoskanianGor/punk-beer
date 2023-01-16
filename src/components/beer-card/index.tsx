@@ -24,7 +24,7 @@ const BeerCard: FC<IBeerCard> = ({ beer, descriptionLimit = 140 }) => {
 				<Image
 					className={s.image}
 					src={image_url ?? '/assets/images/beer-placeholder.png'}
-					alt={name}
+					alt={name ?? 'Just Beer'}
 					width={80}
 					height={180}
 				/>

@@ -1,0 +1,62 @@
+@import "/src/styles/vars";
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  gap: 0.5rem;
+}
+
+.iconWrapper,
+.pageNumber {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-size: $fz-regular;
+  font-weight: 700;
+  color: $c-text;
+  transition: all 0.2s ease-in-out;
+  width: 40px;
+  height: 40px;
+
+  &[disabled] {
+    color: $c-text-light;
+
+    &:hover {
+      color: $c-text-light;
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &:focus {
+    box-shadow: $focus-outline;
+  }
+
+  &:hover {
+    color: $c-accent;
+  }
+}
+
+.pageNumber {
+  &[disabled] {
+    color: $c-text;
+    background-color: var(--cyan5);
+  }
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+}

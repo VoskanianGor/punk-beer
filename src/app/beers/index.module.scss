@@ -1,0 +1,8 @@
+@import "/src/styles/vars";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-block: var(--space-2xl);
+}

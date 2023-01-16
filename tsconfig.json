@@ -25,25 +25,23 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "~api/*": [
+        "./src/api/*"
+      ],
       "~assets/*": [
         "./public/assets/*"
       ],
       "~styles/*": [
         "./src/styles/*"
       ],
-      // "~constants/*": ["./src/constants/*"],
       "~components/*": [
         "./src/components/*"
       ],
       "~hooks/*": [
         "./src/hooks/*"
       ],
-      // "~store/*": ["./src/store/*"],
       "~interfaces/*": [
         "./src/interfaces/*"
-      ],
-      "~utils/*": [
-        "./src/utils/*"
       ]
     }
   },

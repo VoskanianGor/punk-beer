@@ -1,12 +1,15 @@
-import { Inter } from '@next/font/google'
-import styles from './styles.module.scss'
+import { redirect } from 'next/navigation'
+import type { SSRPage } from '~interfaces/i-page'
 
-const inter = Inter({ subsets: ['latin'] })
+const Home: SSRPage = async ({ searchParams: SSRSearchParams }) => {
+	const searchParams = new URLSearchParams(SSRSearchParams)
+	searchParams.set('per_page', '8')
 
-export default function Home() {
-	return (
-		<main className={inter.className}>
-			<h1 className={styles.test}>TEST</h1>
-		</main>
-	)
+	if (!searchParams.has('page')) {
+		searchParams.append('page', '1')
+	}
+
+	redirect(`/beers/?${searchParams.toString()}`)
 }
+
+export default Home

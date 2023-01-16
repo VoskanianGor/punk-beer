@@ -1,13 +1,12 @@
 'use client'
 
-import { FC, use, useEffect, useState } from 'react'
-import useSWR from 'swr'
-import s from './index.module.scss'
-import BeerCard from '~components/beer-card'
+import type { FC } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { useAutoAnimate } from '@formkit/auto-animate/react'
-import IBeer from '~interfaces/i-beer'
+import useSWR from 'swr'
 import clsx from 'clsx'
+import type IBeer from '~interfaces/i-beer'
+import BeerCard from '~components/beer-card'
+import s from './index.module.scss'
 
 interface IBeerList {
 	beers: IBeer[]

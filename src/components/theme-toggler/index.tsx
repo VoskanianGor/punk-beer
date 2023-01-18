@@ -8,7 +8,12 @@ const ThemeToggler = () => {
 	const { isDark, toggle } = useTheme()
 
 	return (
-		<button className={s.toggler} onClick={toggle} title="change theme">
+		<button
+			className={s.toggler}
+			onClick={toggle}
+			title="change theme"
+			suppressHydrationWarning
+		>
 			{isDark ? (
 				<SunIcon className={s.icon} />
 			) : (
